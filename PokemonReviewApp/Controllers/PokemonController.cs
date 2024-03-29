@@ -26,7 +26,6 @@ namespace PokemonReviewApp.Controllers
         {
             var pokemons = _mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
 
-           
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             return Ok(pokemons);
