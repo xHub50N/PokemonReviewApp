@@ -14,9 +14,9 @@ namespace PokemonReviewApp.Controllers
         private readonly IReviewRepository _reviewRepository;
         private readonly IMapper _mapper;
 
-        public ReviewController(IReviewRepository reviewRepository, IMapper mapper)
+        public ReviewController(IReviewRepository review, IMapper mapper)
         {
-            _reviewRepository = reviewRepository;
+            _reviewRepository = review;
             _mapper = mapper;
         }
         [HttpGet]
