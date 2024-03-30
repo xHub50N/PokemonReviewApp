@@ -15,6 +15,17 @@ namespace PokemonReviewApp.Repository
             _context = context;
             _mapper = mapper;
         }
+        public bool CreateCountry(Country country)
+        {
+            _context.Add(country);
+            return Save();
+        }
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
+
         public bool CountryExists(int countryId)
         {
             return _context.Countries.Any(c => c.Id == countryId);
@@ -37,6 +48,12 @@ namespace PokemonReviewApp.Repository
         public ICollection<Owner> GerOwnersFromACountry(int countryId)
         {
             return _context.Owners.Where(c => c.Country.Id == countryId).ToList();
+        }
+
+        public bool UpdateCountry(Country country)
+        {
+            _context.Update(country);
+            return Save();
         }
     }
 }
