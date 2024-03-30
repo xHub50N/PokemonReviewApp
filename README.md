@@ -1,1 +1,2 @@
 # PokemonReviewApp
+This is a RESTful backend application that leverages .NET technology, including the ASP.NET framework and Entity Framework. It follows the principles of Representational State Transfer (REST) architectural style for designing networked applications. The application communicates with a Microsoft SQL database, using HTTP requests to perform CRUD (Create, Read, Update, Delete) operations on resources stored within the database.
